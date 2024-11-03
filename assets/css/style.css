@@ -13,9 +13,9 @@
 
 :root {
     --bg-color: #081b29;
-    --second-bg-color: #112e42;
+    --second-bg-color: #2B123D;
     --text-color: #ededed;
-    --main-color: #00abf0;
+    --main-color: #A625C6;
 }
 
 html {
@@ -87,8 +87,9 @@ section {
 .home {
     display: flex;
     align-items: center;
-    padding: 0 9%;
-    background: url('./home.jpg') ;
+    flex-direction: row-reverse;
+    padding: 0 4%;
+    background: url('../images/home/home1.png') ;
     background-size: cover;
     background-position: center;
 }
@@ -153,7 +154,9 @@ section {
    font-size: 1.6rem;
    margin: 2rem 0 4rem;
 }
-
+.home-content b {
+    color: var(--main-color);
+}
 .btn-box {
     position: relative;
     display: flex;
@@ -266,8 +269,10 @@ section {
   right: 0;
   width: 45%;
   height: 100%;
-  background: transparent;
+  /* background: transparent; */
   transition: 3s;
+  background: var(--bg-color);
+  opacity: .6;
 }
 
 .home-imgHover:hover {
@@ -285,7 +290,9 @@ section {
    background: var(--second-bg-color);
    padding-bottom: 6rem;
 }
-
+.about-content b{
+    color: var(--main-color);
+}
 .heading {
     position: relative;
     font-size: 5rem;
@@ -352,7 +359,7 @@ span {
     background: var(--second-bg-color);
 }
 
-.education {
+.journey {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,34 +368,34 @@ span {
     padding-bottom: 5rem;
 }
 
-.education .education-row {
+.journey .journey-row {
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
 }
 
-.education-row .education-column {
+.journey-row .journey-column {
     flex: 1 1 40rem;
 }
 
-.education-column .title {
+.journey-column .title {
     position: relative;
     display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }
 
-.education-column .education-box {
+.journey-column .journey-box {
     position: relative;
     border-left: .2rem solid var(--main-color);
     }
 
-.education-box .education-content {
+.journey-box .journey-content {
     position: relative;
     padding-left: 2rem;
     }
 
-.education-box .education-content::before {
+.journey-box .journey-content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -399,7 +406,7 @@ span {
     border-radius: 50%;
 }
     
-.education-content .content {
+.journey-content .content {
     position: relative;
     padding: 1.5rem;
     border: .2rem solid var(--main-color);
@@ -408,7 +415,7 @@ span {
     overflow: hidden;
 }    
 
-.education-content .content::before {
+.journey-content .content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -420,24 +427,24 @@ span {
     transition: .6s;
 }
 
-.education-content .content:hover::before {
+.journey-content .content:hover::before {
    width: 100%;
 } 
-.education-content .content .year {
+.journey-content .content .year {
     font-size: 1.5rem;
     color: var(--main-color);
     padding-bottom: .5rem;
 }
 
-.education-content .content .year i {
+.journey-content .content .year i {
     padding-right: .5rem;
 }
 
-.education-content .content .year h3 {
+.journey-content .content .year h3 {
     font-size: 2rem;
 }
 
-.education-content .content .year p {
+.journey-content .content .year p {
     font-size: 1.6rem;
     padding-top: .5rem;
 }
@@ -728,19 +735,129 @@ section:nth-child(odd) .animate.scroll {
 }
 
 
-.education .education-box .animate.scroll {
+.journey .journey-box .animate.scroll {
    width: 105%;
 }
 
 
 .about.show-animate .animate.scroll,
-.education.show-animate .animate.scroll, 
+.journey.show-animate .animate.scroll, 
 .skills.show-animate .animate.scroll,
 .contact.show-animate .animate.scroll {
     transition-delay: calc(.3s * var(--i)) ;
     width: 0;
 }
 
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  
+    .shape {
+      position: absolute;
+      width: 3vw;
+      height: 3vw;
+      filter: blur(1px);
+  
+      &:nth-child(1) {
+        top: 10vw;
+        left: 5vw;
+        animation: moveAroundAnimation 40s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+  
+      &:nth-child(2) {
+        bottom: 10vw;
+        left: 33vw;
+        animation: moveAroundAnimation 20s ease-in-out infinite;
+      }
+  
+      &:nth-child(3) {
+        bottom: 16vw;
+        left: 5vw;
+        animation: moveAroundAnimation 50s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+  
+    }
+  
+  }
+  
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  
+    .particle {
+      position: absolute;
+      width: 3vw;
+      height: 3vw;
+      animation-delay: 3s;
+  
+      &:nth-child(1) {
+        bottom: 14vw;
+        animation-delay: 1s;
+        left: 13vw;
+        animation: moveAroundAnimation2 50s ease-in-out infinite;
+      }
+  
+      &:nth-child(2) {
+        top: 25vw;
+        left: 2vw;
+        animation: moveAroundAnimation2 60s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+  
+      &:nth-child(3) {
+        border-radius: 50%;
+        filter: hue-rotate(292deg);
+        width: 3vw;
+        height: 3vw;
+        left: 6vw;
+        bottom: 3.5vw;
+        box-shadow: 0px 0px 43px 31px black;
+      }
+  
+  
+  
+  
+    }
+  }
+
+  .particles {
+    .particle {
+      width: 12vw !important;
+      height: 12vw !important;
+    }
+  }
+
+  .shapes {
+    .shape {
+      width: 12vw !important;
+      height: 12vw !important;
+
+      &:nth-child(1) {
+        top: 61vw;
+        left: 46vw;
+      }
+
+      &:nth-child(2) {
+        bottom: 61vw;
+        right: 21vw;
+        left: auto;
+      }
+    }
+  }
 
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
@@ -862,7 +979,7 @@ section:nth-child(odd) .animate.scroll {
     font-size: 5.2rem;
     }
 
-    .education {
+    .journey {
         padding: 10rem 4% 5rem 5%;
     }
    
